@@ -1,98 +1,219 @@
-* {
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background: #f0f0f0;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f4f6f9;
-  color: #333;
-  line-height: 1.6;
+header, footer {
+  background: #1976d2;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-h1 {
-  color: #0d47a1;
-  font-size: 2.5rem;
-}
-
-.tagline {
-  font-size: 1.2rem;
-  color: #555;
-}
-
+/* Sections */
 section {
+  background: #ffffff;
   margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-h2 {
-  color: #1565c0;
-  margin-bottom: 10px;
+/* About Me Section */
+.about-me {
+  text-align: center;
 }
 
-p {
-  font-size: 1rem;
-  margin-bottom: 10px;
+/* Quick Links with Flexbox */
+.quick-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
 }
 
+.quick-links li {
+  margin: 10px;
+}
+
+.quick-links a {
+  text-decoration: none;
+  background: #1565c0;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+/* Image Styling */
 img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
   display: block;
   margin: 20px auto;
-  width: 100%;
-  max-width: 400px;
   border-radius: 8px;
 }
 
 
-ul {
-  list-style-type: square;
-  padding-left: 20px;
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-a {
-  color: #1976d2;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-footer {
+.contact-form h2 {
   text-align: center;
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #ccc;
-  font-size: 14px;
+  margin-bottom: 20px;
+  color: #1565c0;
 }
 
+.form-group {
+  margin-bottom: 15px;
+}
 
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0d47a1;
+}
+
+/* Generic Button Styling */
 button {
   padding: 10px 20px;
-  background-color: #1976d2;
-  color: #fff;
+  background-color: #3949ab;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
   background-color: #0d47a1;
+}
+
+/* Footer */
+footer p {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  header, footer {
+    padding: 15px;
+  }
+
+  .quick-links ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form, section {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+.image-gallery {
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.gallery img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
   transform: scale(1.05);
 }
 
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
 }
